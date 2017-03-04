@@ -27,6 +27,69 @@ timeSignatures = [
   "4/4"
 ]
 
+structures = [
+  # Full
+  [
+    "Intro I"
+    "Intro II"
+    "Verse 1.1"
+    "Verse 1.2"
+    "Chorus"
+    "Verse 2.1"
+    "Verse 2.2"
+    "Chorus"
+    "Alternate I"
+    "Alternate II"
+    "Alternate III"
+    "Alternate IV"
+    "Chorus"
+    "Outro I"
+    "Outro II"
+  ]
+
+  # Simple
+  [
+    "Intro I"
+    "Verse 1.1"
+    "Verse 1.2"
+    "Chorus"
+    "Verse 2.1"
+    "Verse 2.2"
+    "Chorus I"
+    "Chorus II"
+  ]
+
+  # Builder
+  [
+    "Verse 1"
+    "Verse 1.1"
+    "Verse 1.2"
+    "Verse 1.3"
+    "Chorus"
+    "Verse 2"
+    "Verse 2.1"
+    "Verse 2.2"
+    "Verse 2.3"
+    "Chorus"
+    "Alternate I"
+    "Alternate II"
+    "Chorus"
+  ]
+
+  # Pop Standard
+  [
+    "Intro"
+    "Verse 1"
+    "Chorus"
+    "Verse 2"
+    "Chorus"
+    "Verse 3"
+    "Chorus"
+    "Alternate"
+    "Chorus"
+  ]
+]
+
 instruments = [
   "drums"
   "percussion"
@@ -50,6 +113,7 @@ getRandom = (array) ->
 tempo = _.random tempoLow, tempoHigh
 key = getRandom(keys)
 timeSignature = getRandom(timeSignatures)
+structure = getRandom(structures)
 
 # Instrument selection ---------------------------
 # To keep things lean-ish we use less instruments than are
@@ -64,16 +128,22 @@ for index in [0..numberOfInstruments]
 
 console.log("")
 console.log("")
-console.log("Song Setup:")
+console.log("SONG SETUP:")
 console.log("\t Tempo: #{tempo}")
 console.log("\t Key: #{key}")
 console.log("\t Time Signature: #{timeSignature}")
 console.log("")
 console.log("")
 
-console.log("Instrumentation:")
+console.log("INSTRUMENTATION:")
 for instrument in useInstruments
   console.log("\t Using: #{instrument}")
+console.log("")
+console.log("")
+
+console.log("STRUCTURE:")
+for section in structure
+  console.log("\t #{section}")
 console.log("")
 console.log("")
 
